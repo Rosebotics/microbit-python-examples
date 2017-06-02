@@ -19,11 +19,30 @@ def main():
             music.play('g4')
 
         if mb.pin2.read_digital():
-            jingleBells()
+            twinkleTwinkle()
         if mb.pin13.read_digital():
-            marioTheme()
+            jingleBells()
         if mb.pin14.read_digital():
+            marioTheme()
+        if mb.pin15.read_digital():
             prelude_in_C()
+
+
+def twinkleTwinkle():
+    music.set_tempo(bpm=60)
+    notes = ['c5:1', 'c:1', 'g:1', 'g:1',
+             'a:1', 'a:1', 'g:2',
+             'f:1', 'f:1', 'e:1', 'e:1',
+             'd:1', 'd:1', 'c:2',
+             'g:1', 'g:1', 'f:1', 'f:1',
+             'e:1', 'e:1', 'd:2',
+             'g:1', 'g:1', 'f:1', 'f:1',
+             'e:1', 'e:1', 'd:2',
+             'c:1', 'c:1', 'g:1', 'g:1',
+             'a:1', 'a:1', 'g:2',
+             'f:1', 'f:1', 'e:1', 'e:1',
+             'd:1', 'd:1', 'c:2']
+    music.play(notes)
 
 
 def jingleBells():
